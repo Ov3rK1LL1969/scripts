@@ -3,14 +3,6 @@ getgenv().bloodfarm = false
 getgenv().mystfarm = false
 getgenv().sorrowfarm = false
 getgenv().nightfarm = false
-getgenv().relicfarm = false
-getgenv().flamingsteal = false
-getgenv().mechanicalsteal = false
-getgenv().heartysteal = false
-getgenv().holysteal = false
-getgenv().donatesteal = false
-getgenv().killnight = false
-getgenv().killcrazy = false
 
 function easyTP(placeCFrame)
 	local player = game.Players.LocalPlayer;
@@ -191,7 +183,7 @@ end
 
 function safeTP()
 	easyTP(game:GetService("Workspace").kaboom.CFrame)
-end)
+end
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/rodus", true))() -- put this first above everything (important!)
 
