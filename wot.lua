@@ -32,7 +32,7 @@ end
 function heartyCup()
 	spawn(function()
 		while heartysteal == true do
-			easyTP(game:GetService("Workspace")["hearty cup"].Handle.CFrame)
+			easyTP(game:GetService("Workspace").gamebuildsthatdontchange["Red dimension"]["Hearty cup"].CFrame)
 				wait()
 		end
 	end)
@@ -160,7 +160,7 @@ function trader()
 end
 
 function oilBase()
-	easyTP(game:GetService("Workspace")["Oil-manBase"].anvil.Part.CFrame)
+	easyTP(game:GetService("Workspace").gamebuildsthatdontchange["Oil-manBase"].anvil.Part.CFrame)
 end
 
 function autokillNight()
