@@ -3,6 +3,16 @@ getgenv().bloodfarm = false
 getgenv().mystfarm = false
 getgenv().sorrowfarm = false
 getgenv().nightfarm = false
+getgenv().relicfarm = false
+getgenv().flamingsteal = false
+getgenv().mechanicalsteal = false
+getgenv().heartysteal = false
+getgenv().holysteal = false
+getgenv().donatesteal = false
+getgenv().killnight = false
+getgenv().killcrazy = false
+
+
 
 function easyTP(placeCFrame)
 	local player = game.Players.LocalPlayer;
@@ -11,64 +21,10 @@ function easyTP(placeCFrame)
 	end
 end
 
-function flamingOil()
-	spawn(function()
-		while flamingsteal == true do
-			easyTP(game:GetService("Workspace")["flaming oil"].Handle.CFrame)
-				wait()
-		end
-	end)
-end
-
-function mechanicalCup()
-	spawn(function()
-		while mechanicalsteal == true do
-			easyTP(game:GetService("Workspace")["mechanical cup"].Handle.CFrame)
-				wait()
-		end
-	end)
-end
-
-function heartyCup()
-	spawn(function()
-		while heartysteal == true do
-			easyTP(game:GetService("Workspace").gamebuildsthatdontchange["Red dimension"]["Hearty cup"].CFrame)
-				wait()
-		end
-	end)
-end
-
-function holyCup()
-	spawn(function()
-		while holysteal == true do
-			easyTP(game:GetService("Workspace")["holy cup"].Handle.CFrame)
-				wait()
-		end
-	end)
-end
-
-function lagCup()
-	spawn(function()
-		while lagsteal == true do
-			easyTP(game:GetService("Workspace")["lag commander cup"].Handle.CFrame)
-				wait()
-		end
-	end)
-end
-
-function donaterCup()
-	spawn(function()
-		while donatesteal == true do
-			easyTP(game:GetService("Workspace").donatercup.Handle.CFrame)
-				wait()
-		end
-	end)
-end
-
 function oilCup()
 	spawn (function()
-		while oilfarm == true do
-			easyTP(game:GetService("Workspace").oil.Handle.CFrame)
+		if oilfarm == true then
+			easyTP(game:GetService("Workspace").oil.real.Parent.Handle.CFrame)
 				wait()
 		end
 	end)
@@ -76,8 +32,8 @@ end
 
 function bloodCup()
 	spawn (function()
-		while bloodfarm == true do
-			easyTP(game:GetService("Workspace").blood.Handle.CFrame)
+		if bloodfarm == true then
+			easyTP(game:GetService("Workspace").blood.real.Parent.Handle.Handle.CFrame)
 				wait()
 		end
 	end)
@@ -85,8 +41,8 @@ end
 
 function mystCup()
 	spawn (function()
-		while mystfarm == true do
-			easyTP(game:GetService("Workspace")["mysterious cup"].Handle.CFrame)
+		if mystfarm == true then
+			easyTP(game:GetService("Workspace")["mysterious cup"].real.Parent.Handle.Handle.CFrame)
 				wait()
 		end
 	end)
@@ -94,8 +50,8 @@ end
 
 function nightEssence()
 	spawn (function()
-		while nightfarm == true do
-			easyTP(game:GetService("Workspace")["nights essence"].Handle.CFrame)
+		if nightfarm == true then
+			easyTP(game:GetService("Workspace")["nights essence"].real.Parent.Handle.Handle.CFrame)
 				wait()
 		end
 	end)
@@ -103,26 +59,9 @@ end
 
 function sorrowCup()
 	spawn (function()
-		while sorrowfarm == true do
-			easyTP(game:GetService("Workspace")["sorrow cup"].Handle.CFrame)
+		if sorrowfarm == true then
+			easyTP(game:GetService("Workspace")["sorrow cup"].real.Parent.Handle.Handle.CFrame)
 				wait()
-		end
-	end)
-end
-
-function relicFarm()
-	spawn(function()
-		while relicfarm == true do
-			easyTP(game:GetService("Workspace")["bday_relic"].Handle.CFrame)
-			wait()
-			easyTP(game:GetService("Workspace")["mout_relic"].Handle.CFrame)
-			wait()
-			easyTP(game:GetService("Workspace")["dev relic"].Handle.CFrame)
-			wait()
-			easyTP(game:GetService("Workspace")["streetfighting_relic"].Handle.CFrame)
-			wait()
-			easyTP(game:GetService("Workspace")["thevoices_relic"].Handle.CFrame)
-			wait()
 		end
 	end)
 end
@@ -136,7 +75,7 @@ function tpNight()
 end
 
 function tpRiver()
-	easyTP(game:GetService("Workspace")["Red dimension"].HeartyFall.Red2.CFrame)
+	easyTP(game:GetService("Workspace")["The J"]["Red dimension"].HeartyFall.Red2.CFrame)
 end
 
 function tpUpgrade()
@@ -160,7 +99,7 @@ function trader()
 end
 
 function oilBase()
-	easyTP(game:GetService("Workspace").gamebuildsthatdontchange["Oil-manBase"].anvil.Part.CFrame)
+	easyTP(game:GetService("Workspace")["The J"]["Oil-manBase"].anvil.Part.CFrame)
 end
 
 function autokillNight()
