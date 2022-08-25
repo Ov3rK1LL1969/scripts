@@ -24,7 +24,7 @@ end
 function oilCup()
 	spawn (function()
 		if oilfarm == true then
-			easyTP(game:GetService("Workspace").oil.delete.Parent.Handle.CFrame)
+			easyTP(game:GetService("Workspace").oil.real.Parent.Handle.CFrame)
 				wait()
 		end
 	end)
@@ -33,7 +33,7 @@ end
 function bloodCup()
 	spawn (function()
 		if bloodfarm == true then
-			easyTP(game:GetService("Workspace").blood.delete.Parent.Handle.CFrame)
+			easyTP(game:GetService("Workspace").blood.real.Parent.Handle.CFrame)
 				wait()
 		end
 	end)
@@ -42,7 +42,7 @@ end
 function mystCup()
 	spawn (function()
 		if mystfarm == true then
-			easyTP(game:GetService("Workspace")["mysterious cup"].delete.Parent.Handle.CFrame)
+			easyTP(game:GetService("Workspace")["mysterious cup"]["play burning memory"].Parent.Handle.CFrame)
 				wait()
 		end
 	end)
@@ -51,7 +51,7 @@ end
 function nightEssence()
 	spawn (function()
 		if nightfarm == true then
-			easyTP(game:GetService("Workspace")["nights essence"].delete.Parent.Handle.CFrame)
+			easyTP(game:GetService("Workspace")["nights essence"]["play burning memory"].Parent.Handle.CFrame)
 				wait()
 		end  
 	end)
@@ -60,7 +60,7 @@ end
 function sorrowCup()
 	spawn (function()
 		if sorrowfarm == true then
-			easyTP(game:GetService("Workspace")["sorrow cup"].delete.Parent.Handle.CFrame)
+			easyTP(game:GetService("Workspace")["sorrow cup"]["play burning memory"].Parent.Handle.CFrame)
 				wait()
 		end
 	end)
