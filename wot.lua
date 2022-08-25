@@ -33,7 +33,7 @@ end
 function bloodCup()
 	spawn (function()
 		if bloodfarm == true then
-			easyTP(game:GetService("Workspace").blood.real.Parent.Handle.CFrame)
+			easyTP(game:GetService("Workspace").blood.delete.Parent.Handle.CFrame)
 				wait()
 		end
 	end)
