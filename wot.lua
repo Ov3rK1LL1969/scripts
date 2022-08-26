@@ -13,7 +13,6 @@ getgenv().killnight = false
 getgenv().killcrazy = false
 
 
-
 function easyTP(placeCFrame)
 	local player = game.Players.LocalPlayer;
 	if player.Character then
@@ -213,8 +212,7 @@ CreateToggle(tabs['Autos'], "Autofarm Night Essence", "This button is toggleable
 end)
 
 CreateToggle(tabs['Autos'],"Auto Kill Night Crawler", "This auto kills this boss", function()
-		getgenv().killnight = nil
-        getgenv().killnight = state
+        getgenv().killnight = toggled
         while state == true do
             autokillNight()
         wait(.1)
@@ -222,8 +220,7 @@ CreateToggle(tabs['Autos'],"Auto Kill Night Crawler", "This auto kills this boss
 end)
 
 CreateToggle(tabs['Autos'],"Auto Kill Crazy Trollge", "This auto kills this boss", function()
-		getgenv().killcrazy = nil
-        getgenv().killcrazy = state
+        getgenv().killcrazy = toggled
         while state == true do
             autokillCrazy()
         wait(.1)
