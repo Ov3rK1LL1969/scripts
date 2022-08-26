@@ -4,14 +4,9 @@ getgenv().mystfarm = false
 getgenv().sorrowfarm = false
 getgenv().nightfarm = false
 getgenv().relicfarm = false
-getgenv().flamingsteal = false
-getgenv().mechanicalsteal = false
-getgenv().heartysteal = false
-getgenv().holysteal = false
-getgenv().donatesteal = false
 getgenv().killnight = false
 getgenv().killcrazy = false
-
+getgenv().clockfarm = false
 
 function easyTP(placeCFrame)
 	local player = game.Players.LocalPlayer;
@@ -60,6 +55,15 @@ function sorrowCup()
 	spawn (function()
 		if sorrowfarm == true then
 			easyTP(game:GetService("Workspace")["sorrow cup"]["play burning memory"].Parent.Handle.CFrame)
+				wait()
+		end
+	end)
+end
+
+function t3Clock()
+	spawn (function()
+		if clockfarm == true then
+			easyTP(game:GetService("Workspace")["T3's clock"].Handle.CFrame)
 				wait()
 		end
 	end)
@@ -156,18 +160,22 @@ CreateToggle(tabs['Autos'], "Autofarm ALL", "This button is toggleable!",functio
 			getgenv().mystfarm = toggled
 			getgenv().sorrowfarm = toggled
 			getgenv().nightfarm = toggled
+			getgenv().clockfarm = toggled
 		while toggled == true do
 		oilCup()
-		wait(.1)
+		wait(.01)
 		bloodCup()
-		wait(.1)
+		wait(.01)
 		mystCup()
-		wait(.1)
+		wait(.01)
 		sorrowCup()
-		wait(.1)
+		wait(.01)
 		nightEssence()
-		wait(.1)
+		wait(.01)
+		t3Clock()
+		wait(.01)
 		safeTP()
+		wait(.2)
 	end
 end)
 
@@ -207,6 +215,14 @@ CreateToggle(tabs['Autos'], "Autofarm Night Essence", "This button is toggleable
             getgenv().nightfarm = toggled
         while toggled == true do
             nightEssence()
+		wait(.3)
+	end
+end)
+
+CreateToggle(tabs['Autos'], "Autofarm T3 Clock", "This button is toggleable!",function() -- example toggle
+            getgenv().clockfarm = toggled
+        while toggled == true do
+            t3Clock()
 		wait(.3)
 	end
 end)
