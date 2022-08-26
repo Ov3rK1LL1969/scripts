@@ -124,6 +124,25 @@ function safeTP()
 	easyTP(game:GetService("Workspace").kaboom.CFrame)
 end
 
+function autokillNight()
+	spawn(function()
+		while getgenv().killnight == true do
+			game:GetService("Workspace")["night crawler"].Humanoid.Health = 0
+			wait(1)
+		end
+	end)
+end
+
+function autokillCrazy()
+	spawn(function()
+		while getgenv().killcrazy == true do
+			game:GetService("Workspace")["crazy trollge"].Humanoid.Health = 0
+			wait(1)
+		end
+	end)
+end
+
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/rodus", true))() -- put this first above everything (important!)
 
 CreateMain("World of Trollge Ov3rK1LL#1969") -- example main
@@ -191,6 +210,24 @@ CreateToggle(tabs['Autos'], "Autofarm Night Essence", "This button is toggleable
             nightEssence()
 		wait(.3)
 	end
+end)
+
+CreateToggle(tabs['Autos'],"Auto Kill Night Crawler", "This auto kills this boss", function()
+		getgenv().killnight = nil
+        getgenv().killnight = state
+        while state == true do
+            autokillNight()
+        wait(.1)
+    end
+end)
+
+CreateToggle(tabs['Autos'],"Auto Kill Crazy Trollge", "This auto kills this boss", function()
+		getgenv().killcrazy = nil
+        getgenv().killcrazy = state
+        while state == true do
+            autokillCrazy()
+        wait(.1)
+    end
 end)
 
 CreateButton(tabs['Tps'], "Forge", "This button is clickable!",function() -- example button
