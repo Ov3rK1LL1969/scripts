@@ -256,7 +256,7 @@ CreateToggle(tabs['Autos'], "Autofarm Night Essence", "This button is toggleable
 	end
 end)
 
-CreateToggle(tabs['Autos'], "Autofarm Night Essence", "This button is toggleable!",function() -- example toggle
+CreateToggle(tabs['Autos'], "Autofarm T3 Clock", "This button is toggleable!",function() -- example toggle
             getgenv().clockfarm = toggled
         while toggled == true do
             t3Clock()
