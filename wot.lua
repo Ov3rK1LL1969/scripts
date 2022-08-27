@@ -7,6 +7,39 @@ getgenv().relicfarm = false
 getgenv().killnight = false
 getgenv().killcrazy = false
 getgenv().clockfarm = false
+getgenv().autocraft = false
+
+local function fireproximityprompt(Obj, Amount, Skip)
+    if Obj.ClassName == "ProximityPrompt" then 
+        Amount = Amount or 1
+        local PromptTime = Obj.HoldDuration
+        if Skip then 
+            Obj.HoldDuration = 0
+        end
+        for i = 1, Amount do 
+            Obj:InputHoldBegin()
+            if not Skip then 
+                wait(Obj.HoldDuration)
+            end
+            Obj:InputHoldEnd()
+        end
+        Obj.HoldDuration = PromptTime
+    else 
+        error("userdata<ProximityPrompt> expected")
+    end
+end
+
+function autoCraft()
+    spawn(function()
+		if getgenv().autocraft == true then
+        for i,v in pairs(game:GetService("Workspace")["The J"].Forging:GetDescendants()) do
+            if v.ClassName == "ProximityPrompt" then
+                fireproximityprompt(v, 1, false)
+				end
+            end
+        end
+    end)
+end
 
 function easyTP(placeCFrame)
 	local player = game.Players.LocalPlayer;
@@ -154,28 +187,32 @@ CreateTab("Autos") -- example tab
 CreateTab("Tps")
 CreateTab("Lessen Lag")
 
+CreateToggle(tabs['Autos'], "Autocraft (stand at the anvil of the cup)", "This button is toggleable!",function() -- example toggle
+            getgenv().autocraft = toggled
+        while toggled == true do
+            autoCraft()
+		wait(1)
+	end
+end)
+
 CreateToggle(tabs['Autos'], "Autofarm ALL", "This button is toggleable!",function() -- example toggle
             getgenv().oilfarm = toggled
 			getgenv().bloodfarm = toggled
 			getgenv().mystfarm = toggled
 			getgenv().sorrowfarm = toggled
 			getgenv().nightfarm = toggled
-			getgenv().clockfarm = toggled
 		while toggled == true do
 		oilCup()
-		wait(.01)
+		wait(.1)
 		bloodCup()
-		wait(.01)
+		wait(.1)
 		mystCup()
-		wait(.01)
+		wait(.1)
 		sorrowCup()
-		wait(.01)
+		wait(.1)
 		nightEssence()
-		wait(.01)
-		t3Clock()
-		wait(.01)
+		wait(.1)
 		safeTP()
-		wait(.2)
 	end
 end)
 
@@ -219,7 +256,7 @@ CreateToggle(tabs['Autos'], "Autofarm Night Essence", "This button is toggleable
 	end
 end)
 
-CreateToggle(tabs['Autos'], "Autofarm T3 Clock", "This button is toggleable!",function() -- example toggle
+CreateToggle(tabs['Autos'], "Autofarm Night Essence", "This button is toggleable!",function() -- example toggle
             getgenv().clockfarm = toggled
         while toggled == true do
             t3Clock()
