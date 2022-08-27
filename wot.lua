@@ -50,7 +50,7 @@ end
 
 function oilCup()
 	spawn (function()
-		if oilfarm == true then
+		while oilfarm == true do
 			easyTP(game:GetService("Workspace").oil.real.Parent.Handle.CFrame)
 				wait()
 		end
@@ -59,7 +59,7 @@ end
 
 function bloodCup()
 	spawn (function()
-		if bloodfarm == true then
+		while bloodfarm == true do
 			easyTP(game:GetService("Workspace").blood.delete.Parent.Handle.CFrame)
 				wait()
 		end
@@ -68,7 +68,7 @@ end
 
 function mystCup()
 	spawn (function()
-		if mystfarm == true then
+		while mystfarm == true do
 			easyTP(game:GetService("Workspace")["mysterious cup"]["play burning memory"].Parent.Handle.CFrame)
 				wait()
 		end
@@ -77,7 +77,7 @@ end
 
 function nightEssence()
 	spawn (function()
-		if nightfarm == true then
+		while nightfarm == true do
 			easyTP(game:GetService("Workspace")["nights essence"]["play burning memory"].Parent.Handle.CFrame)
 				wait()
 		end  
@@ -86,7 +86,7 @@ end
 
 function sorrowCup()
 	spawn (function()
-		if sorrowfarm == true then
+		while sorrowfarm == true do
 			easyTP(game:GetService("Workspace")["sorrow cup"]["play burning memory"].Parent.Handle.CFrame)
 				wait()
 		end
@@ -95,7 +95,7 @@ end
 
 function t3Clock()
 	spawn (function()
-		if clockfarm == true then
+		while clockfarm == true do
 			easyTP(game:GetService("Workspace")["T3's clock"].Handle.CFrame)
 				wait()
 		end
@@ -212,6 +212,7 @@ CreateToggle(tabs['Autos'], "Autofarm ALL", "This button is toggleable!",functio
 		wait(.1)
 		nightEssence()
 		wait(.1)
+		t3Clock()
 		safeTP()
 	end
 end)
@@ -266,7 +267,7 @@ end)
 
 CreateToggle(tabs['Autos'],"Auto Kill Night Crawler", "This auto kills this boss", function()
         getgenv().killnight = toggled
-        while state == true do
+        while toggled == true do
             autokillNight()
         wait(.1)
     end
@@ -274,7 +275,7 @@ end)
 
 CreateToggle(tabs['Autos'],"Auto Kill Crazy Trollge", "This auto kills this boss", function()
         getgenv().killcrazy = toggled
-        while state == true do
+        while toggled == true do
             autokillCrazy()
         wait(.1)
     end
