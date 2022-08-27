@@ -201,6 +201,7 @@ CreateToggle(tabs['Autos'], "Autofarm ALL", "This button is toggleable!",functio
 			getgenv().mystfarm = toggled
 			getgenv().sorrowfarm = toggled
 			getgenv().nightfarm = toggled
+			getgenv().clockfarm = toggled
 		while toggled == true do
 		oilCup()
 		wait(.1)
