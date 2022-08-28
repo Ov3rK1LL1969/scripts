@@ -19,7 +19,7 @@ end
 function collectAll()
     spawn(function()
         if getgenv().autofarm == true then
-            for _,v in pairs(workspace:GetDescendants()) do
+            for _,v in pairs(game:GetService("Workspace").Map.Spawn:GetDescendants()) do
                 if v:IsA("TouchTransmitter") then
                     firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) --0 is touch
                         wait()
