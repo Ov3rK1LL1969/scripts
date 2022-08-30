@@ -8,6 +8,8 @@ getgenv().killnight = false
 getgenv().killcrazy = false
 getgenv().clockfarm = false
 getgenv().autocraft = false
+getgenv().safetp = false
+
 
 local function fireproximityprompt(Obj, Amount, Skip)
     if Obj.ClassName == "ProximityPrompt" then 
@@ -102,6 +104,15 @@ function t3Clock()
 	end)
 end
 
+function safeTP()
+	spawn(function()
+		while getgenv().safetp == true do
+			easyTP(game:GetService("Workspace").kaboom.CFrame)
+			wait(.1)
+		end
+	end)
+end
+
 function tpForge()
     easyTP(game:GetService("Workspace")["The J"].Forging.anvil.Part.CFrame)
 end
@@ -156,10 +167,6 @@ function autokillCrazy()
 	end)
 end
 
-function safeTP()
-	easyTP(game:GetService("Workspace").kaboom.CFrame)
-end
-
 function autokillNight()
 	spawn(function()
 		while getgenv().killnight == true do
@@ -205,6 +212,7 @@ Autos:addToggle("AutoFarm Everything",function(value)
 	getgenv().sorrowfarm = value
 	getgenv().nightfarm = value
 	getgenv().clockfarm = value
+	getgenv().safetp = value
 		while value == true do
 			oilCup()
 			wait(.1)
@@ -217,6 +225,8 @@ Autos:addToggle("AutoFarm Everything",function(value)
 			nightEssence()
 			wait(.1)
 			t3Clock()
+			wait(.1)
+			safeTP()
 	end
 end)
 
